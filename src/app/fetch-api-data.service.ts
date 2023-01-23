@@ -3,6 +3,7 @@ import { catchError } from 'rxjs/operators';
 import {
   HttpClient,
   HttpHeaders,
+  HttpResponse,
   HttpErrorResponse,
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -17,20 +18,23 @@ const apiUrl = 'https://my-movie-db22.herokuapp.com/';
 export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
   // This will provide HttpClient to the entire class, making it available via this.http
+  apiUrl = 'https://my-movie-db22.herokuapp.com/';
+
   constructor(private http: HttpClient) {}
 
   // POST request to API to register new user
 
-  public userRegistration(userDetails: any): Observable<any> {
-    console.log(userDetails);
+  public userRegistration(user: IUser): Observable<any> {
+    console.log(user);
     return this.http
-      .post(apiUrl + 'users', userDetails)
+      .post(apiUrl + 'users', user)
       .pipe(catchError(this.handleError));
   }
 
   // POST request to API to log in existing user
 
   public userLogin(userDetails: any): Observable<any> {
+    console.log(userDetails);
     return this.http
       .post(apiUrl + 'login', userDetails)
       .pipe(catchError(this.handleError));
