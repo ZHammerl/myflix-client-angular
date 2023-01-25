@@ -41,10 +41,7 @@ export class FetchApiDataService {
   }
 
   // GET request to API to return all movies
-
   getAllMovies(): Observable<any> {
-    // Get Authorization token stored in local storage
-
     return this.http
       .get<IMovie[]>(apiUrl + 'movies', {
         headers: this.getHttpHeaders(),
@@ -57,8 +54,6 @@ export class FetchApiDataService {
 
   // GET request to API to return 1 movie
   getSingleMovie(title: string): Observable<any> {
-    // Get Authorization token stored in local storage
-
     return this.http
       .get<IMovie>(`${apiUrl}movies/${title}`, {
         headers: this.getHttpHeaders(),
@@ -163,7 +158,7 @@ export class FetchApiDataService {
 
   getHttpHeaders() {
     const token = localStorage.getItem('token');
-    return new HttpHeaders({ Authorization: 'Bearer' + token });
+    return new HttpHeaders({ Authorization: `Bearer ${token}` });
   }
 
   private handleError(error: HttpErrorResponse): any {
