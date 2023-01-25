@@ -33,10 +33,10 @@ export class FetchApiDataService {
 
   // POST request to API to log in existing user
 
-  public userLogin(userDetails: any): Observable<any> {
-    console.log(userDetails);
+  public userLogin(user: any): Observable<any> {
+    console.log(user);
     return this.http
-      .post(apiUrl + 'login', userDetails)
+      .post(apiUrl + 'login', user)
       .pipe(catchError(this.handleError));
   }
 
