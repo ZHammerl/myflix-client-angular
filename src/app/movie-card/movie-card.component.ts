@@ -16,7 +16,7 @@ export class MovieCardComponent {
   }
 
   getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((res: any) => {
+    this.fetchApiData.getAllMovies().subscribe((res: IMovie[]) => {
       this.movies = res;
       console.log(this.movies);
       return this.movies;
