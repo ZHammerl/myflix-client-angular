@@ -1,1 +1,74 @@
-<p>edit-profile works!</p>
+<div clas="edit-profile_wrapper">
+  <mat-card class="edit-profile_card">
+    <mat-card-header>
+      <mat-card-title>Update your information</mat-card-title>
+      <mat-card-actions>
+        <button
+          class="close-button"
+          mat-stroked-button
+          aria-label="Close dialog"
+          mat-dialog-close
+          color="primary"
+        >
+          X
+        </button>
+      </mat-card-actions>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input
+            matInput
+            [(ngModel)]="userData.Username"
+            name="Username"
+            type="text"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            [(ngModel)]="userData.Password"
+            name="Password"
+            type="text"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+
+          <input
+            matInput
+            [(ngModel)]="userData.Email"
+            placeholder=""
+            name="Email"
+            type="text"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Birthday</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            [(ngModel)]="userData.Birthday"
+            name="Birthday"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="updateUser()" color="primary">
+        Update Profile
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

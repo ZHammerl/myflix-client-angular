@@ -34,19 +34,25 @@
           required
         />
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Birthday</mat-label>
         <input
           matInput
+          [matDatepicker]="picker"
           [(ngModel)]="userData.Birthday"
-          placeholder="Birthday"
-          type="text"
-          name="Birthday"
-          required
         />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="registerUser()" color="primary">Sign Up</button>
+    <button mat-raised-button (click)="registerUser()" color="primary">
+      Sign Up
+    </button>
   </mat-card-actions>
 </mat-card>

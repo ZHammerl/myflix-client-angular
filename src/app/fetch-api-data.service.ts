@@ -90,8 +90,9 @@ export class FetchApiDataService {
 
   // GET user details by name
   getUser(username: string): Observable<any> {
+    console.log(username);
     return this.http
-      .get<IUser>(`${apiUrl}users/${username}`, {
+      .get<IUserID>(`${apiUrl}users/${username}`, {
         headers: this.getHttpHeaders(),
       })
       .pipe(
@@ -101,9 +102,14 @@ export class FetchApiDataService {
   }
 
   // Update user details
-  updateUser(name: string): Observable<any> {
+  updateUser(user: IUser): Observable<any> {
+    const username = localStorage.getItem('user');
+    console.log(username);
+    console.log(user.Username);
     return this.http
-      .put<IUser>(`${apiUrl}users/${name}`, { headers: this.getHttpHeaders() })
+      .put<IUser>(`${apiUrl}users/${username}`, user, {
+        headers: this.getHttpHeaders(),
+      })
       .pipe(
         map((res: IUser) => res || {}),
         catchError(this.handleError)

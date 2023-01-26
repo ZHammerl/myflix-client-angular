@@ -9,6 +9,7 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 // import to display notifications to the user
 import { MatSnackBar } from '@angular/material/snack-bar';
 
+
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
@@ -16,7 +17,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = {
-    _id: 0,
     Username: '',
     Password: '',
     Email: '',
@@ -26,7 +26,7 @@ export class UserRegistrationFormComponent implements OnInit {
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
-    public snackBar: MatSnackBar
+    public snackBar: MatSnackBar,
   ) {}
 
   ngOnInit(): void {}

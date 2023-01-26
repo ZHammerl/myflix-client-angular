@@ -16,6 +16,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 // Components
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
@@ -30,8 +32,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
-  { path: 'profile', component: ProfileComponent},
-  { path: 'editProfile', component: EditProfileComponent},
+  { path: 'profile', component: ProfileComponent },
+  { path: 'editProfile', component: EditProfileComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -59,6 +61,8 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatSnackBarModule,
     MatToolbarModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
   ],

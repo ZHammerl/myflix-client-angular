@@ -14,7 +14,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  user: IUser = { _id: 0, Username: '', Password: '', Email: '', Birthday: '' };
+  user: IUserID = {
+    _id: 0,
+    Username: '',
+    Password: '',
+    Email: '',
+    Birthday: '',
+  };
   movies: IMovie[] = [];
   favMovies: IMovie[] = [];
 
@@ -32,12 +38,12 @@ export class ProfileComponent implements OnInit {
 
   getUserData(): void {
     const username = this.userService.getUserNameLocalStorage();
-
+    console.log(username);
     if (!username) {
       throw new Error('Unknown User in Profile Component');
     }
 
-    this.fetchApiData.getUser(username).subscribe((response: IUser) => {
+    this.fetchApiData.getUser(username).subscribe((response: IUserID) => {
       this.user = response;
     });
   }
