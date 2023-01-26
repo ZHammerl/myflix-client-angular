@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component'; 
 import { LoginFormComponent } from '../login-form/login-form.component'; 
@@ -9,7 +9,7 @@ import { MovieCardComponent } from '../movie-card/movie-card.component';
   templateUrl: './welcome-page.component.html',
   styleUrls: ['./welcome-page.component.scss'],
 })
-export class WelcomePageComponent {
+export class WelcomePageComponent implements OnInit{
   constructor(public dialog: MatDialog) {}
   ngOnInit(): void {}
   //This is the function  that will open the dialog when the signup button is clicked

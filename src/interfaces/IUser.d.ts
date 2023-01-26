@@ -1,7 +1,8 @@
 interface IUser {
-    "Username": string;
-    "Password": string;
-    "Email": string;
-    "Birthday": string;
-    "FavoriteMovies"?: string[];
-  }
+  _id: number;
+  Username: string;
+  Password: string;
+  Email: string;
+  Birthday: string;
+  FavoriteMovies?: string[];
+}
