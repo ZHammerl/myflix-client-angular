@@ -5,7 +5,7 @@ interface IMovie {
     "Director": IDirector;
     "Genre": IGenre;
     "Imageurl": string;
-    "Actors": string[];
+    "Actors": string;
     "Featured": boolean;
   }
   

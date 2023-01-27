@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { UserService } from '../user.service';
+import { DirectorComponent } from '../director/director.component';
+import { GenreComponent } from '../genre/genre.component';
+import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -85,6 +88,49 @@ export class MovieCardComponent implements OnInit {
     this.fetchApiData.deleteFavoriteMovies(name, id).subscribe((result) => {
       this.favoriteMovies = result.favoriteMovies;
       this.ngOnInit();
+    });
+  }
+
+  openDirectorDialog(
+    Name: string,
+    Bio: string,
+    Birthyear?: any,
+    Deathyear?: any
+  ): void {
+    this.dialog.open(DirectorComponent, {
+      data: {
+        Name: Name,
+        Bio: Bio,
+        Birth: Birthyear,
+        Death: Deathyear,
+      },
+      width: '500px',
+    });
+    console.log('open Director Dialog');
+  }
+
+  openGenreDialog(name: string, description: string): void {
+    this.dialog.open(GenreComponent, {
+      data: {
+        Name: name,
+        Description: description,
+      },
+      width: '500px',
+    });
+  }
+
+  openMovieDetailsDialog(
+    title: string,
+    description: string,
+    actors: string
+  ): void {
+    this.dialog.open(MovieDetailsComponent, {
+      data: {
+        Title: title,
+        Description: description,
+        Actors: actors,
+      },
+      width: '500px',
     });
   }
 }

@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-actions class="button-wrapper-right">
+    <button
+      class="close-button"
+      mat-dialog-close
+      aria-label="Close movie details dialog button"
+    >
+      X
+    </button>
+  </mat-card-actions>
+  <mat-card-title class="dialog__title">{{ movie.Title }}</mat-card-title>
+  <mat-card-content>
+    <div>Plot: {{ movie.Description }}</div>
+    <div>Actors: {{ movie.Actors }}</div>
+  </mat-card-content></mat-card
+>
