@@ -28,6 +28,7 @@ export class MovieCardComponent implements OnInit {
   ngOnInit(): void {
     this.getMovies();
     this.getUserData();
+    this.getFavoriteMovies();
   }
 
   getMovies(): void {
@@ -49,19 +50,30 @@ export class MovieCardComponent implements OnInit {
     }
 
     this.fetchApiData.getUser(username).subscribe((response: IUserID) => {
-      this.favoriteMovies = response.FavoriteMovies || [];
       this.user = response;
       console.log(this.user.Username);
     });
   }
+
+  getFavoriteMovies(): void {
+    const username = this.userService.getUserNameLocalStorage();
+    console.log(username);
+    if (!username) {
+      throw new Error('Unknown User in Movie Card Component');
+    }
+
+    this.fetchApiData.getFavoriteMovies(username).subscribe((response) => {
+      this.favoriteMovies = response || [];
+      console.log(this.favoriteMovies);
+    });
+  }
   // check, if movie is in user's favorite list
   isFav(id: number): boolean {
-    return this.favoriteMovies.includes(id);
+    return this.favoriteMovies?.includes(id);
   }
 
   // select movies as favorite movie
   addToFavoriteMovie(name: string, id: number): void {
-    console.log('selected', name, id);
     this.fetchApiData.addFavoriteMovies(name, id).subscribe((result) => {
       this.favoriteMovies = result.favoriteMovies;
       this.ngOnInit();

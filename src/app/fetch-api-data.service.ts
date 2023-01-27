@@ -141,7 +141,7 @@ export class FetchApiDataService {
   // ADD favorite movie to user profile by name and title
   addFavoriteMovies<IMovie>(name: string, id: number): Observable<any> {
     return this.http
-      .post<IMovie>(`${apiUrl}users/${name}/${id}`, {
+      .post<IMovie>(`${apiUrl}users/${name}/${id}`, null, {
         headers: this.getHttpHeaders(),
       })
       .pipe(
@@ -155,6 +155,7 @@ export class FetchApiDataService {
     return this.http
       .delete<IMovie>(`${apiUrl}users/${name}/${id}`, {
         headers: this.getHttpHeaders(),
+        responseType: 'text' as any,
       })
       .pipe(
         map((res: IMovie) => res || {}),
