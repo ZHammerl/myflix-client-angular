@@ -3,5 +3,5 @@ interface IUser {
   Password: string;
   Email: string;
   Birthday: string;
-  FavoriteMovies?: string[];
+  FavoriteMovies?: number[];
 }

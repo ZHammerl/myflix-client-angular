@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserData();
+    this.getMovies();
   }
 
   getUserData(): void {
@@ -63,8 +64,8 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  removeFavoriteMovie(name: string, title: string): void {
-    this.fetchApiData.deleteFavoriteMovies(name, title).subscribe((result) => {
+  removeFavoriteMovie(name: string, id: number): void {
+    this.fetchApiData.deleteFavoriteMovies(name, id).subscribe((result) => {
       this.ngOnInit();
     });
   }

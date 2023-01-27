@@ -1,10 +1,10 @@
 interface IMovie {
-    "_id": string
+    "_id": number,
     "Title": string;
     "Description": string;
     "Director": IDirector;
     "Genre": IGenre;
-    "ImageURL": string;
+    "Imageurl": string;
     "Actors": string[];
     "Featured": boolean;
   }

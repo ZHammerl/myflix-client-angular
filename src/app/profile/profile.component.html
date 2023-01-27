@@ -32,13 +32,13 @@
       </button>
     </mat-card-actions>
   </mat-card>
-  <mat-card class="card_container fav-movies_container">
-    <mat-card-header class="card_header">
+  <mat-card class="card-container fav-movies-container">
+    <mat-card-header class="card-header">
       <mat-card-title class="title">My Movies</mat-card-title>
       <mat-card-subtitle
         class="displayMessage"
         *ngIf="user.FavoriteMovies?.length == 0"
-        >There are no movies in your list yet.</mat-card-subtitle
+        >Looks pretty lonely over here. Add some Movies!</mat-card-subtitle
       >
     </mat-card-header>
     <div class="scroll-container">
@@ -46,14 +46,14 @@
         <mat-card-content>
           <img
             class="fav-image"
-            src="{{ movie.ImageURL }}"
+            src="{{ movie.Imageurl }}"
             alt="{{ movie.Title }}"
           />
           <button
             class="remove-button"
             mat-button
             color="accent"
-            (click)="removeFavoriteMovie(user.Username, movie.Title)"
+            (click)="removeFavoriteMovie(user.Username, movie._id)"
           >
             <mat-icon>favorite</mat-icon>
           </button>

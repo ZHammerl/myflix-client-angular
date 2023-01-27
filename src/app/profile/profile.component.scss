@@ -1,0 +1,31 @@
+// Movie view
+.scroll-container {
+    overflow-x: scroll;
+    display: flex;
+    padding: 2%;
+}
+
+.fav-movies-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fav-card {
+    margin: 5px;
+    border: 1px solid teal;
+}
+
+.fav-image {
+    height: 300px;
+    width: 220px;
+}
+
+.remove-button {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+}
+
+.displayMessage {
+    text-align: center;
+}

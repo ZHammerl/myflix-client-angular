@@ -139,9 +139,9 @@ export class FetchApiDataService {
   }
 
   // ADD favorite movie to user profile by name and title
-  addFavoriteMovies(name: string, title: string): Observable<any> {
+  addFavoriteMovies<IMovie>(name: string, id: number): Observable<any> {
     return this.http
-      .post<IMovie>(`${apiUrl}users/${name}/movies/${title}`, {
+      .post<IMovie>(`${apiUrl}users/${name}/${id}`, {
         headers: this.getHttpHeaders(),
       })
       .pipe(
@@ -151,9 +151,9 @@ export class FetchApiDataService {
   }
 
   // delete favorite movie from the user profile
-  deleteFavoriteMovies<IMovie>(name: string, title: string): Observable<any> {
+  deleteFavoriteMovies<IMovie>(name: string, id: number): Observable<any> {
     return this.http
-      .delete<IMovie>(`${apiUrl}users/${name}/movies/${title}`, {
+      .delete<IMovie>(`${apiUrl}users/${name}/${id}`, {
         headers: this.getHttpHeaders(),
       })
       .pipe(
