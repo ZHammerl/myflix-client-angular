@@ -1,3 +1,5 @@
+@import "../../styles/abstract/variables";
+
 .card-wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -13,16 +15,23 @@
   max-width: 300px;
   width: 300px;
   margin: 10px;
+  background-color: $background-color-card;
+  border: 4px dashed $text-color-dark;
+  // border-style: dotted;
+  // border-width: 10px;
+  // // border: 40px solid;
+  // border-image: url("../../assets/Filmstrip-border.png");
+  // border-image-slice: 10%;
+  // border-image-width: 40px;
 
   &__image {
     max-height: 250px;
     width: auto;
     border-radius: 5px;
   }
-  &__title {
-    color: black;
-  }
+
   &__subtitle {
-    font-size: small;
+    font-size: smaller;
+    padding-top: 10px;
   }
 }
