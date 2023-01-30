@@ -1,0 +1,9 @@
+@import "../abstract/variables";
+
+.button {
+  color: $text-color-light !important;
+}
+
+mat-mdc-raised-button.mat-primary {
+  color: $text-color-light;
+}

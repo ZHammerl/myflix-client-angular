@@ -1,5 +1,6 @@
 @use "@angular/material" as mat;
 @include mat.core();
+@import "./abstract/variables";
 
 $persian-plum-palette: (
   50: #ffdac1,
@@ -13,16 +14,16 @@ $persian-plum-palette: (
   800: #6b0f1a,
   900: #590012,
   contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: white,
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
+    50: $text-color-dark,
+    100: $text-color-dark,
+    200: $text-color-dark,
+    300: $text-color-dark,
+    400: $text-color-light,
+    500: $text-color-light,
+    600: $text-color-light,
+    700: $text-color-light,
+    800: $text-color-light,
+    900: $text-color-light,
   ),
 );
 
@@ -38,16 +39,16 @@ $carrot-orange-palette: (
   800: #d86800,
   900: #ce5000,
   contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: rgba(black, 0.87),
-    600: rgba(black, 0.87),
-    700: rgba(black, 0.87),
-    800: white,
-    900: white,
+    50: $text-color-dark,
+    100: $text-color-dark,
+    200: $text-color-dark,
+    300: $text-color-dark,
+    400: $text-color-dark,
+    500: $text-color-dark,
+    600: $text-color-dark,
+    700: $text-color-dark,
+    800: $text-color-light,
+    900: $text-color-light,
   ),
 );
 $red-salsa-palette: (
@@ -62,15 +63,15 @@ $red-salsa-palette: (
   800: #c73737,
   900: #b92c2b,
   contrast: (
-    50: rgba(black, 0.87),
-    100: rgba(black, 0.87),
-    200: rgba(black, 0.87),
-    300: rgba(black, 0.87),
-    400: rgba(black, 0.87),
-    500: white,
-    600: white,
-    700: white,
-    800: white,
-    900: white,
+    50: $text-color-dark,
+    100: $text-color-dark,
+    200: $text-color-dark,
+    300: $text-color-dark,
+    400: $text-color-dark,
+    500: $text-color-light,
+    600: $text-color-light,
+    700: $text-color-light,
+    800: $text-color-light,
+    900: $text-color-light,
   ),
 );

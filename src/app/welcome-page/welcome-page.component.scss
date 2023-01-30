@@ -1,0 +1,20 @@
+@import "../../styles/abstract/variables";
+
+h1 {
+  color: $text-color-light;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 40px;
+}
+
+.welcome_button {
+  min-width: 80px;
+  color: $text-color-light !important;
+}
