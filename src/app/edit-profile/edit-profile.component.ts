@@ -31,6 +31,7 @@ export class EditProfileComponent implements OnInit {
   ngOnInit(): void {
     this.getUser();
   }
+  hide = true;
 
   //GET request to receive user data
   getUser(): void {

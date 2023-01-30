@@ -1,14 +1,17 @@
-<mat-card class="dialog mat-elevation-z0">
-    <mat-card-actions class="button-wrapper-right">
-      <button
-        class="close-button"
-        mat-dialog-close
-        aria-label="Close genre dialog button">
-        X
-      </button>
-    </mat-card-actions>
-    <mat-card-title class="dialog__title">{{genre.Name}}</mat-card-title>
-    <mat-dialog-content class="dialog__content">
-      <div>{{genre.Description}}</div>
-    </mat-dialog-content>
-  </mat-card>
+<mat-card class="dialog">
+  <mat-card-actions class="button-wrapper-right">
+    <button
+      class="close-button"
+      mat-dialog-close
+      aria-label="Close genre dialog button"
+    >
+      X
+    </button>
+  </mat-card-actions>
+  <mat-card-title class="dialog__title">{{
+    genre.Name
+  }}</mat-card-title>
+  <mat-dialog-content class="dialog__content">
+    <div>{{ genre.Description }}</div>
+  </mat-dialog-content>
+</mat-card>

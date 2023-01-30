@@ -3,6 +3,9 @@
 @use "@angular/material" as mat;
 // Plus imports for other components in your app.
 @import "./theming.scss";
+@import "./abstract/variables";
+@import "./components/dialogs";
+@import "./components/forms";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -54,6 +57,6 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  color: white;
-  background-color: #150004;
+  color: $text-color-dark;
+  background-color: $background-color;
 }

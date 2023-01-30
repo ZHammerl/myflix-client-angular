@@ -1,31 +1,87 @@
-// Movie view
-.scroll-container {
-    overflow-x: scroll;
+// Profile view
+
+.profile-wrapper {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+.profile-card {
+  width: 80%;
+  margin: 10px auto;
+
+  &__content {
+    padding: 10px;
+    font-size: 1.2em;
     display: flex;
-    padding: 2%;
+    flex-direction: row;
+  }
+}
+.profile-card__buttons {
+  margin-right: 10px;
+}
+
+.label-container,
+.profile-data {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  min-width: 100px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 5px 10px 5px 0;
+}
+.profile-data {
+  align-content: flex-start;
+}
+.profile-data > p {
+  min-width: 100px;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 5px 10px 5px 0;
+}
+
+button {
+  margin-right: 10px;
+}
+// Movie view
+
+.scroll-container {
+  overflow-x: scroll;
+  display: flex;
+  padding: 2%;
 }
 
 .fav-movies-container {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .fav-card {
-    margin: 5px;
-    border: 1px solid teal;
+  margin: 5px;
+  border: 1px solid #6b0f1a;
 }
 
 .fav-image {
-    height: 300px;
-    width: 220px;
+  height: 300px;
+  width: 220px;
 }
 
 .remove-button {
-    position: absolute;
-    top: 10px;
-    right: 5px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
 }
 
 .displayMessage {
-    text-align: center;
+  text-align: center;
 }

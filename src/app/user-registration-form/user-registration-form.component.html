@@ -1,56 +1,65 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Sign Up!</mat-card-title>
+<mat-card class="form">
+  <mat-card-header class="form__header">
+    <mat-card-title class="form__title">Sign Up!</mat-card-title>
   </mat-card-header>
-  <mat-card-content>
+  <mat-card-content class="form__content">
     <form>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
         <input
           matInput
           [(ngModel)]="userData.Username"
-          placeholder="Username"
           type="text"
           name="Username"
           required
         />
+        <mat-icon matSuffix class="iconSuffix">account_circle</mat-icon>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
         <input
           matInput
           [(ngModel)]="userData.Password"
           placeholder="Password"
-          type="text"
           name="Password"
+          [type]="hide ? 'password' : 'text'"
           required
         />
+        <mat-icon class="iconSuffix" matSuffix (click)="hide = !hide">{{
+          hide ? "visibility_off" : "visibility"
+        }}</mat-icon>
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
         <input
           matInput
           [(ngModel)]="userData.Email"
-          placeholder="Email"
+          ngModel
+          email="true"
           type="text"
           name="Email"
           required
         />
+        <mat-icon class="iconSuffix" matIconSuffix>alternate_email</mat-icon>
       </mat-form-field>
-      <mat-form-field appearance="fill">
+      <mat-form-field appearance="outline">
         <mat-label>Birthday</mat-label>
         <input
           matInput
           [matDatepicker]="picker"
           [(ngModel)]="userData.Birthday"
         />
-        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-hint class="hint" align="start">mm/dd/yyyy</mat-hint>
         <mat-datepicker-toggle
           matIconSuffix
+          class="iconSuffix"
           [for]="picker"
         ></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </form>
   </mat-card-content>
-  <mat-card-actions>
+  <mat-card-actions class="form__actions">
     <button mat-raised-button (click)="registerUser()" color="primary">
       Sign Up
     </button>

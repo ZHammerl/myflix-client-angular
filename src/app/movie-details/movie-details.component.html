@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="dialog">
   <mat-card-actions class="button-wrapper-right">
     <button
       class="close-button"
@@ -9,8 +9,12 @@
     </button>
   </mat-card-actions>
   <mat-card-title class="dialog__title">{{ movie.Title }}</mat-card-title>
-  <mat-card-content>
-    <div>Plot: {{ movie.Description }}</div>
-    <div>Actors: {{ movie.Actors }}</div>
-  </mat-card-content></mat-card
+  <mat-dialog-content class="dialog__content">
+    <div>
+      <span class="content__sub-title">Plot: </span>{{ movie.Description }}
+    </div>
+    <div>
+      <span class="content__sub-title">Actors: </span>{{ movie.Actors }}
+    </div>
+  </mat-dialog-content></mat-card
 >

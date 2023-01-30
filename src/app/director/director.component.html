@@ -1,4 +1,4 @@
-<mat-card class="dialog mat-elevation-z0">
+<mat-card class="dialog">
     <mat-card-actions class="button-wrapper-right">
       <button
         class="close-button"
@@ -10,7 +10,7 @@
     <mat-card-title class="dialog__title">{{director.Name}}</mat-card-title>
     <mat-dialog-content class="dialog__content">
       <div><span class="content__sub-title">Biography: </span>{{director.Bio}}</div>
-      <div *ngIf="director.Birth"><span class="content__sub-title">Birthday: </span>{{director.Birth}}</div>
-      <div *ngIf="director.Death"><span class="content__sub-title">Death: </span>{{director.Death}}</div>
+      <div *ngIf="director.Birth"><span class="content__sub-title">Birthyear: </span>{{director.Birth}}</div>
+      <div *ngIf="director.Death"><span class="content__sub-title">Deathyear: </span>{{director.Death}}</div>
     </mat-dialog-content>
   </mat-card>

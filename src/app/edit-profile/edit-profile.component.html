@@ -1,74 +1,79 @@
-<div clas="edit-profile_wrapper">
-  <mat-card class="edit-profile_card">
-    <mat-card-header>
-      <mat-card-title>Update your information</mat-card-title>
-      <mat-card-actions>
-        <button
-          class="close-button"
-          mat-stroked-button
-          aria-label="Close dialog"
-          mat-dialog-close
-          color="primary"
-        >
-          X
-        </button>
-      </mat-card-actions>
-    </mat-card-header>
-    <mat-card-content>
-      <form>
-        <mat-form-field appearance="fill">
-          <mat-label>Username</mat-label>
-          <input
-            matInput
-            [(ngModel)]="userData.Username"
-            name="Username"
-            type="text"
-            required
-          />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Password</mat-label>
-          <input
-            matInput
-            [(ngModel)]="userData.Password"
-            name="Password"
-            type="text"
-            required
-          />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Email</mat-label>
+<mat-card class="edit-profile_card form">
+  <mat-card-actions class="edit-profile__actions">
+    <button
+      class="close-button"
+      aria-label="Close dialog"
+      mat-dialog-close
+      color="primary"
+    >
+      X
+    </button>
+  </mat-card-actions>
+  <mat-card-header class="form__header edit-profile__header">
+    <mat-card-title class="form__title">Update your information</mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="form__content">
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          [(ngModel)]="userData.Username"
+          name="Username"
+          type="text"
+          required
+        />
+        <mat-icon matSuffix class="iconSuffix">account_circle</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [(ngModel)]="userData.Password"
+          placeholder="Password"
+          name="Password"
+          [type]="hide ? 'password' : 'text'"
+          required
+        />
+        <mat-icon class="iconSuffix" matSuffix (click)="hide = !hide">{{
+          hide ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
 
-          <input
-            matInput
-            [(ngModel)]="userData.Email"
-            placeholder=""
-            name="Email"
-            type="text"
-            required
-          />
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <mat-label>Birthday</mat-label>
-          <input
-            matInput
-            [matDatepicker]="picker"
-            [(ngModel)]="userData.Birthday"
-            name="Birthday"
-          />
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle
-            matIconSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button (click)="updateUser()" color="primary">
-        Update Profile
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+        <input
+          matInput
+          [(ngModel)]="userData.Email"
+          ngModel
+          email="true"
+          name="Email"
+          type="text"
+          required
+        />
+        <mat-icon class="iconSuffix" matIconSuffix>alternate_email</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Birthday</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [(ngModel)]="userData.Birthday"
+          name="Birthday"
+        />
+        <mat-hint class="hint" align="start">mm/dd/yyyy</mat-hint>
+        <mat-datepicker-toggle
+          class="iconSuffix"
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="form__actions">
+    <button mat-raised-button (click)="updateUser()" color="primary">
+      Update Profile
+    </button>
+  </mat-card-actions>
+</mat-card>

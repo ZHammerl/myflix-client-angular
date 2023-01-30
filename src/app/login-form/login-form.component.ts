@@ -28,6 +28,8 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  hide = true;
+
   /**
    * gets user Name and token from API call userLogin, displays success or error message, navigates to Movie list /Homepage
    */
