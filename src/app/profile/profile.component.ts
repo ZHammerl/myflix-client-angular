@@ -21,7 +21,6 @@ export class ProfileComponent implements OnInit {
     Email: '',
     Birthday: '',
   };
-  movies: IMovie[] = [];
   favMovies: IMovie[] = [];
 
   constructor(
@@ -50,8 +49,6 @@ export class ProfileComponent implements OnInit {
   }
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: IMovie[]) => {
-      this.movies = resp;
-
       this.favMovies = resp.filter((movie) =>
         this.user.FavoriteMovies?.includes(movie._id)
       );

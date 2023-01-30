@@ -1,16 +1,15 @@
 <div class="card-wrapper">
-  <mat-card
-    class="movie-card"
-    *ngFor="let movie of movies; let i = index"
-    style="flex: 1 1 auto"
-  >
-    <mat-card-header>
-      <mat-card-title>{{ movie.Title }}</mat-card-title>
+  <mat-card class="movie-card" *ngFor="let movie of movies; let i = index">
+    <mat-card-header class="movie-card__header">
+      <mat-card-title class="movie-card__title">{{
+        movie.Title
+      }}</mat-card-title>
       <!-- Render add to or remove from favorites button depending on isFav -->
       <button
         mat-icon-button
         *ngIf="!isFav(movie._id)"
         (click)="addToFavoriteMovie(user.Username, movie._id)"
+        color="primary"
       >
         <mat-icon>favorite_border</mat-icon>
       </button>
@@ -18,12 +17,12 @@
         mat-icon-button
         *ngIf="isFav(movie._id)"
         (click)="removeFromFavoriteMovie(user.Username, movie._id)"
-        color="primary"
+        color="accent"
       >
         <mat-icon>favorite</mat-icon>
       </button>
-      <mat-card-subtitle
-        >Directed by: {{ movie.Director.Name }}</mat-card-subtitle
+      <mat-card-subtitle class="movie-card__subtitle"
+        >Director: {{ movie.Director.Name }}</mat-card-subtitle
       >
     </mat-card-header>
     <img
@@ -54,7 +53,9 @@
       </button>
       <button
         mat-button
-        (click)="openMovieDetailsDialog(movie.Title, movie.Description, movie.Actors)"
+        (click)="
+          openMovieDetailsDialog(movie.Title, movie.Description, movie.Actors)
+        "
       >
         Synopsis
       </button>
