@@ -1,0 +1,14 @@
+@import "../../styles/abstract/variables";
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav-bar__title {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+

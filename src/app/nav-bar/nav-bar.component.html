@@ -1,9 +1,14 @@
-<mat-toolbar color="primary" role="heading">
-  <span>MyFlix</span>
-  <span class="spacer"></span>
-  <button mat-button (click)="navigateToMovies()">Movies</button>
-  <button mat-button (click)="navigateToProfile()">MyProfile</button>
-  <button mat-button (click)="logout()">
-    <mat-icon>logout</mat-icon>
-  </button></mat-toolbar
+<mat-toolbar class="nav-bar" color="primary" role="heading">
+  <div class="nav-bar__title">MyFlix</div>
+  <div class="button-wrapper">
+    <button mat-button (click)="navigateToMovies()">
+      <mat-icon>theaters</mat-icon>
+    </button>
+    <button mat-button (click)="navigateToProfile()">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button mat-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div></mat-toolbar
 >
