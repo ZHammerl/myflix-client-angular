@@ -38,7 +38,6 @@ export class ProfileComponent implements OnInit {
 
   getUserData(): void {
     const username = this.userService.getUserNameLocalStorage();
-    console.log(username);
     if (!username) {
       throw new Error('Unknown User in Profile Component');
     }

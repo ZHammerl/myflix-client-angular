@@ -1,10 +1,10 @@
 <mat-toolbar class="nav-bar" color="primary" role="heading">
   <div class="nav-bar__title">MyFlix</div>
   <div class="button-wrapper">
-    <button mat-button (click)="navigateToMovies()">
+    <button mat-button (click)="navigateToMovies()" *ngIf="isUser()">
       <mat-icon>theaters</mat-icon>
     </button>
-    <button mat-button (click)="navigateToProfile()">
+    <button mat-button (click)="navigateToProfile()" *ngIf="isUser()">
       <mat-icon>account_circle</mat-icon>
     </button>
     <button mat-button (click)="logout()">
