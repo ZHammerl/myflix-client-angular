@@ -1,3 +1,5 @@
+@import "../../styles/abstract/variables";
+
 // Profile view
 
 .profile-wrapper {
@@ -16,6 +18,7 @@
 .profile-card {
   width: 80%;
   margin: 10px auto;
+  background-color: $background-color-card;
 
   &__content {
     padding: 10px;
@@ -61,14 +64,18 @@ button {
   padding: 2%;
 }
 
-.fav-movies-container {
+.fav-movies {
   display: flex;
   flex-direction: column;
+  background-color: $background-color;
+  &__title {
+    color: $text-color-light !important;
+  }
 }
 
 .fav-card {
   margin: 5px;
-  border: 1px solid #6b0f1a;
+  background-color: $background-color-card;
 }
 
 .fav-image {

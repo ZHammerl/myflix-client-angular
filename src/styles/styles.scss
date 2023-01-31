@@ -6,6 +6,7 @@
 @import "./abstract/variables";
 @import "./components/dialogs";
 @import "./components/forms";
+@import "./components/cards";
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -59,4 +60,5 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   color: $text-color-dark;
   background-color: $background-color;
+  height: 80vh;
 }

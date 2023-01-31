@@ -1,4 +1,4 @@
-<div class="profile_wrapper">
+<div class="profile_wrapper card-wrapper">
   <mat-card class="profile-card">
     <mat-card-header class="profile-card-header">
       <mat-icon>account_circle</mat-icon>
@@ -34,9 +34,9 @@
   </mat-card>
 
   <!-- Favorite Movies -->
-  <mat-card class="card-container fav-movies-container">
+  <mat-card class="card-container fav-movies">
     <mat-card-header class="card-header">
-      <mat-card-title class="title">My Movies</mat-card-title>
+      <mat-card-title class="title fav-movies__title">My Movies</mat-card-title>
       <mat-card-subtitle
         class="displayMessage"
         *ngIf="user.FavoriteMovies?.length == 0"
