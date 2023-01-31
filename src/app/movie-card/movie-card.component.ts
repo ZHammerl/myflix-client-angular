@@ -37,7 +37,6 @@ export class MovieCardComponent implements OnInit {
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((res: IMovie[]) => {
       this.movies = res;
-      console.log(this.movies);
       return this.movies;
     });
   }
@@ -47,27 +46,23 @@ export class MovieCardComponent implements OnInit {
    */
   getUserData(): void {
     const username = this.userService.getUserNameLocalStorage();
-    console.log(username);
     if (!username) {
       throw new Error('Unknown User in Movie Card Component');
     }
 
     this.fetchApiData.getUser(username).subscribe((response: IUserID) => {
       this.user = response;
-      console.log(this.user.Username);
     });
   }
 
   getFavoriteMovies(): void {
     const username = this.userService.getUserNameLocalStorage();
-    console.log(username);
     if (!username) {
       throw new Error('Unknown User in Movie Card Component');
     }
 
     this.fetchApiData.getFavoriteMovies(username).subscribe((response) => {
       this.favoriteMovies = response || [];
-      console.log(this.favoriteMovies);
     });
   }
   // check, if movie is in user's favorite list
@@ -106,7 +101,6 @@ export class MovieCardComponent implements OnInit {
       },
       width: '500px',
     });
-    console.log('open Director Dialog');
   }
 
   openGenreDialog(name: string, description: string): void {
