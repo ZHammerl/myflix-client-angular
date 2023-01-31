@@ -34,6 +34,11 @@ export class MovieCardComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
+  /**
+   * function responsible to retrieve movie list from the backend
+   * @function getMovies
+   * @returns {object} of favorite movies in the provided array
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((res: IMovie[]) => {
       this.movies = res;
@@ -42,7 +47,9 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * gets user data from API call and an array of favorite movies
+   * function responsible to retrieve user data from the backend
+   * @function getUserData
+   * @returns {object} user
    */
   getUserData(): void {
     const username = this.userService.getUserNameLocalStorage();
@@ -54,7 +61,11 @@ export class MovieCardComponent implements OnInit {
       this.user = response;
     });
   }
-
+  /**
+   * function responsible to retrieve favorite movie list from the backend
+   * @function getFavMovies
+   * @returns {object} of favorite movies in the provided array
+   */
   getFavoriteMovies(): void {
     const username = this.userService.getUserNameLocalStorage();
     if (!username) {
@@ -65,12 +76,20 @@ export class MovieCardComponent implements OnInit {
       this.favoriteMovies = response || [];
     });
   }
-  // check, if movie is in user's favorite list
+  /**
+   * function to check, if movie is in user's favorite list
+   * @param {number} id of movie
+   * @returns {boolean}
+   *  */ 
   isFav(id: number): boolean {
     return this.favoriteMovies?.includes(id);
   }
 
-  // select movies as favorite movie
+  /**
+   * function to select movies as favorite movie
+   * @param {string} name of user
+   * @param {number} id of movie
+   * */
   addToFavoriteMovie(name: string, id: number): void {
     this.fetchApiData.addFavoriteMovies(name, id).subscribe((result) => {
       this.favoriteMovies = result.favoriteMovies;
@@ -78,7 +97,12 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
-  // deselect movie as favorite movie
+  /**
+   * function to deselect movie as favorite movie
+   * @function removeFavoriteMovie
+   * @param {string} name of user
+   * @param {number} id of user
+   * */
   removeFromFavoriteMovie(name: string, id: number): void {
     this.fetchApiData.deleteFavoriteMovies(name, id).subscribe((result) => {
       this.favoriteMovies = result.favoriteMovies;
@@ -86,6 +110,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens dialog to view director details
+   * @event click Button on HTML template
+   */
   openDirectorDialog(
     Name: string,
     Bio: string,
@@ -103,6 +131,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens dialog to view genre details
+   * @event click Button on HTML template
+   */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: {
@@ -113,6 +145,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens dialog to view movie details
+   * @event click Button on HTML template
+   */
   openMovieDetailsDialog(
     title: string,
     description: string,

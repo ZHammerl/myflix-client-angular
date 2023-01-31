@@ -33,9 +33,14 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUserData();
-    this.getMovies();
+    this.getFavMovies();
   }
 
+  /**
+   * function responsible to retrieve user data from the backend
+   * @function getUserData
+   * @returns {object} user
+   */
   getUserData(): void {
     const username = this.userService.getUserNameLocalStorage();
     if (!username) {
@@ -46,7 +51,13 @@ export class ProfileComponent implements OnInit {
       this.user = response;
     });
   }
-  getMovies(): void {
+
+  /**
+   * function responsible to retrieve favorite movie list from the backend
+   * @function getFavMovies
+   * @returns {object} of favorite movies in the provided array
+   */
+  getFavMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: IMovie[]) => {
       this.favMovies = resp.filter((movie) =>
         this.user.FavoriteMovies?.includes(movie._id)
@@ -54,18 +65,34 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Opens dialog to edit user profile
+   * @event click Button on HTML template
+   */
   openEditDialog(): void {
     this.dialog.open(EditProfileComponent, {
       width: '300px',
     });
   }
 
+  /**
+   * function responsible to delete movie from favorite movie list in the database (backend)
+   * @function removeFavoriteMovie.
+   * @param {string} name of user
+   * @param {number} id of movie
+   * @returns {object} of updated user
+   */
   removeFavoriteMovie(name: string, id: number): void {
     this.fetchApiData.deleteFavoriteMovies(name, id).subscribe((result) => {
       this.ngOnInit();
     });
   }
 
+
+  /**
+   * function to open confirmation dialog, delete profile and redirect to welcome view
+   * @function deleteProfile
+   * */
   deleteProfile(): void {
     if (confirm('Are you sure you want to delete your profile?')) {
       this.fetchApiData.deleteUser(this.user._id).subscribe((resp: string) => {

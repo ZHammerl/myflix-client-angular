@@ -33,7 +33,11 @@ export class EditProfileComponent implements OnInit {
   }
   hide = true;
 
-  //GET request to receive user data
+  /**
+   * function responsible to retrieve user data from the backend
+   * @function getUser
+   * @returns {object} user
+   */
   getUser(): void {
     const username = this.userService.getUserNameLocalStorage()!;
     this.fetchApiData.getUser(username).subscribe((resp: any) => {
@@ -42,7 +46,11 @@ export class EditProfileComponent implements OnInit {
     });
   }
 
-  // PUT request to update user, clears local storage and redirects to profile view
+  /**
+   * function responsible to update user
+   * clears local storage and redirects to and refreshes profile view
+   * @function updateUser
+   * */
   updateUser(): void {
     this.fetchApiData.updateUser(this.userData).subscribe((resp: IUser) => {
       this.snackBar.open('User updated.', undefined, { duration: 3000 });
@@ -51,6 +59,11 @@ export class EditProfileComponent implements OnInit {
     });
     this.dialogRef.close();
   }
+
+  /**
+   * function responsible to refresh/reload component
+   * @function reloadComponent
+   *  */
 
   reloadComponent() {
     const url = this.router.url;

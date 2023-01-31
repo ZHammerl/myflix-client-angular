@@ -31,7 +31,10 @@ export class LoginFormComponent implements OnInit {
   hide = true;
 
   /**
-   * gets user Name and token from API call userLogin, displays success or error message, navigates to Movie list /Homepage
+   * This function is responsible for sending the form inputs to the backend
+   * Saves token and username to local storage
+   * navigates to movie-card-component after successful server authentication
+   * @function loginUser
    */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(
