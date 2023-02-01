@@ -18,7 +18,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "ES2022",
-    "useDefineForClassFields": false,
+    // "useDefineForClassFields": false,
     "lib": ["ES2022", "dom"]
   },
   "angularCompilerOptions": {
@@ -27,10 +27,4 @@
     "strictInputAccessModifiers": true,
     "strictTemplates": true
   },
-  "typedocOptions": {
-    "entryPoints": ["src/main.ts"],
-    "entryPointStrategy": "expand",
-    "out": "docs",
-    "includes": "src"
-  }
-}
+ }
