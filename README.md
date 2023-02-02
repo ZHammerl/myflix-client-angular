@@ -6,7 +6,7 @@ This project uses **Angular**, **Angular Material** and **TypeScript** to create
 
 ## Objective
 
-This project was built to expierence the differences between Angular and React (previously built client-side, see [here](https://github.com/ZHammerl/myFlix-client))
+This project was built to experience the differences between Angular and React (previously built client-side, see [here](https://github.com/ZHammerl/myFlix-client))
 
 ## Learnings
 
@@ -14,6 +14,14 @@ This project was built to expierence the differences between Angular and React (
 I enjoyed setting up and working through the project with Angular. Although at first it might feel overwhelming seeing the amount of files and the determined file structer when setting up the project (and it takes its time to understand the different parts and files), once you get an overview it is easier to follow the code then in React. The clear separation of concerns in Angular just makes it easier understandable, whereas in React you need to work towards it.
 
 Another very comfortable point is the easy access to UI libraries (here I used Angular Material) and other third party integrations, which were easy to integrate since either built-in or built-for Angular. This way you don't run into dependency incompatibility issues as often as in React. This way it was more fun and I like the outcome a lot better than the React version.
+
+### ...from using Typedoc
+following the instruction from the Typedoc documentation I quickly ran into the problem that typedoc would only generate documentation from my readme file but not the actual app. I tried with a typedoc config file and adding entrypoints into the tsconfig, but it didn't change anything. My search on google didn't give me a solution to my problem and I asked a colleague who gave me the best tipp. Using the command 
+
+```bash
+  npx typedoc --entryPointStrategy expand ./src 
+```
+did the trick. Eventhough I had defined this entrypoint strategy previously in the config file, this made the difference.
 
 ## User Stories
 * As a user, I want to be able to receive information on movies, directors, and genres so that I
@@ -35,8 +43,8 @@ can learn more about movies I’ve watched or am interested in.
 
 ## User Flow Chart
 
+![flowchart](https://user-images.githubusercontent.com/108287700/216327264-ef7a9d46-5cb7-4a3c-8309-ea87f43d732a.png)
 
-##
 
 
 ## Development server
